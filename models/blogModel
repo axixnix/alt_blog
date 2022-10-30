@@ -1,0 +1,22 @@
+const mongoose = require("mongoose")
+const Schema =mongoose.Schema
+
+const objectId = Schema.objectId
+
+const blogSchema = new Schema({
+    id:objectId,
+    created_at:Date,
+    title:{type:String,required:true},
+    description:{type:String,required:true},
+    tags:{type:String},
+    author:{type:String,required:true},
+    state:{type:String,enum:["draft","published"]},
+    read_count:Number,
+    reading_time:String,
+    body:{type:String,required:true}
+
+
+})
+
+const Blog = mongoose.model("Blog",blogSchema)
+module.exports(Blog)
