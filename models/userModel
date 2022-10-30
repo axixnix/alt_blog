@@ -1,0 +1,15 @@
+const mongoose =require("mongoose")
+const Schema = mongoose.Schema
+
+
+const UserSchema = new Schema({
+    created_at:Date,
+    first_name:{},
+    last_name:{},
+    email:{},
+    password:{}
+})
+
+const User = mongoose.model("User",UserSchema)
+
+module.exports(User)
